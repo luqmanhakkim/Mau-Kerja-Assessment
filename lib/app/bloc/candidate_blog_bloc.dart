@@ -1,14 +1,8 @@
 import 'package:bloc/bloc.dart';
 import 'package:dio/dio.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:mau_kerja_assessment/app/models/address_model.dart';
-import 'package:mau_kerja_assessment/app/models/emails_model.dart';
 import 'package:mau_kerja_assessment/app/models/models.dart';
 import 'package:mau_kerja_assessment/app/repository/candidate_blog_repository.dart';
-
-import '../models/blog_model.dart';
-import '../models/candidates_model.dart';
-
 part 'candidate_blog_event.dart';
 part 'candidate_blog_state.dart';
 part 'candidate_blog_bloc.freezed.dart';
@@ -95,7 +89,7 @@ class CandidateBlogBloc extends Bloc<CandidateBlogEvent, CandidateBlogState> {
 
         final statusResponse = await candidateBlogRepository.getStatus();
 
-        emit(const CandidateBlogLoading(isLoading: true));
+        emit(const CandidateBlogLoading(isLoading: false));
 
         print('emailResponse ${emailResponse.results}');
 

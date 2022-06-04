@@ -15,8 +15,6 @@ class CandidateDetailContent extends StatelessWidget {
     required this.statusModel,
     required this.image,
     required this.name,
-    required this.statusIcon,
-    required this.statusColor,
   }) : super(key: key);
 
   final EmailModel emailModel;
@@ -24,8 +22,6 @@ class CandidateDetailContent extends StatelessWidget {
   final Status statusModel;
   final String image;
   final String name;
-  final Widget statusIcon;
-  final Widget statusColor;
 
   @override
   Widget build(BuildContext context) {
@@ -37,6 +33,58 @@ class CandidateDetailContent extends StatelessWidget {
     ];
 
     final String joinValues = values.join(',');
+
+    Widget createStatusIcon() {
+      if (statusModel.status == 'Hired') {
+        return Icon(
+          Icons.check_circle_rounded,
+          color: Colors.green,
+        );
+      } else if (statusModel.status == 'Rejected') {
+        return Icon(
+          Icons.cancel,
+          color: Colors.red,
+        );
+      } else if (statusModel.status == 'KIV') {
+        return Icon(
+          Icons.alarm,
+          color: Colors.grey,
+        );
+      } else {
+        return Icon(
+          Icons.thumb_up,
+          color: Colors.orange,
+        );
+      }
+    }
+
+    Widget createStatusColor() {
+      if (statusModel.status == 'Hired') {
+        return Text(
+          statusModel.status!,
+          style: TextStyle(
+              color: Colors.green, fontSize: 18, fontWeight: FontWeight.bold),
+        );
+      } else if (statusModel.status == 'Rejected') {
+        return Text(
+          statusModel.status!,
+          style: TextStyle(
+              color: Colors.red, fontSize: 18, fontWeight: FontWeight.bold),
+        );
+      } else if (statusModel.status == 'KIV') {
+        return Text(
+          statusModel.status!,
+          style: TextStyle(
+              color: Colors.grey, fontSize: 18, fontWeight: FontWeight.bold),
+        );
+      } else {
+        return Text(
+          statusModel.status!,
+          style: TextStyle(
+              color: Colors.orange, fontSize: 18, fontWeight: FontWeight.bold),
+        );
+      }
+    }
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -191,9 +239,9 @@ class CandidateDetailContent extends StatelessWidget {
               ),
               Row(
                 children: [
-                  statusIcon,
+                  createStatusIcon(),
                   SizedBox(width: 5),
-                  statusColor,
+                  createStatusColor(),
                 ],
               ),
             ],

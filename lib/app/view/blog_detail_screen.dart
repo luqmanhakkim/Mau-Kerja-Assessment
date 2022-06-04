@@ -92,7 +92,7 @@ class BlogDetailScreen extends StatelessWidget {
                     Text(
                       'Tags: $tags',
                       style: TextStyle(
-                        fontSize: 14,
+                        fontSize: 16,
                         fontWeight: FontWeight.normal,
                       ),
                     ),

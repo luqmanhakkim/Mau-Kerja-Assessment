@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mau_kerja_assessment/app/bloc/candidate_blog_bloc.dart';
-import 'package:mau_kerja_assessment/app/models/emails_model.dart';
 
 import '../../widget/candidate_detail_content.dart';
 import '../models/models.dart';
@@ -38,6 +37,19 @@ class _CandidateDetailScreenState extends State<CandidateDetailScreen> {
         title: Text('Job Application Status'),
         centerTitle: true,
         backgroundColor: Colors.black,
+        leading: IconButton(
+          icon: Icon(
+            Icons.chevron_left,
+            color: Colors.white,
+          ),
+          iconSize: 40,
+          onPressed: () {
+            Navigator.of(context).pop();
+            context.read<CandidateBlogBloc>().add(
+                  CandidateBlogFetchAllCandidates(),
+                );
+          },
+        ),
       ),
       body: BlocBuilder<CandidateBlogBloc, CandidateBlogState>(
         builder: (context, state) {
@@ -51,75 +63,9 @@ class _CandidateDetailScreenState extends State<CandidateDetailScreen> {
             statusList = state.statusModel;
           }
 
-          if (state is CandidateBlogLoading) {
-            return Center(
-              child: CircularProgressIndicator(),
-            );
-          }
-
           return ListView.builder(
               itemCount: emailList.length,
               itemBuilder: (context, index) {
-                Widget createStatusIcon() {
-                  if (statusList[index].status == 'Hired') {
-                    return Icon(
-                      Icons.check_circle_rounded,
-                      color: Colors.green,
-                    );
-                  } else if (statusList[index].status == 'Rejected') {
-                    return Icon(
-                      Icons.cancel,
-                      color: Colors.red,
-                    );
-                  } else if (statusList[index].status == 'KIV') {
-                    return Icon(
-                      Icons.alarm,
-                      color: Colors.grey,
-                    );
-                  } else {
-                    return Icon(
-                      Icons.thumb_up,
-                      color: Colors.orange,
-                    );
-                  }
-                }
-
-                Widget createStatusColor() {
-                  if (statusList[index].status == 'Hired') {
-                    return Text(
-                      statusList[index].status!,
-                      style: TextStyle(
-                          color: Colors.green,
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold),
-                    );
-                  } else if (statusList[index].status == 'Rejected') {
-                    return Text(
-                      statusList[index].status!,
-                      style: TextStyle(
-                          color: Colors.red,
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold),
-                    );
-                  } else if (statusList[index].status == 'KIV') {
-                    return Text(
-                      statusList[index].status!,
-                      style: TextStyle(
-                          color: Colors.grey,
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold),
-                    );
-                  } else {
-                    return Text(
-                      statusList[index].status!,
-                      style: TextStyle(
-                          color: Colors.orange,
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold),
-                    );
-                  }
-                }
-
                 if (widget.id == emailList[index].id &&
                     widget.id == addressList[index].id &&
                     widget.id == statusList[index].id) {
@@ -129,8 +75,6 @@ class _CandidateDetailScreenState extends State<CandidateDetailScreen> {
                     statusModel: statusList[index],
                     image: widget.images,
                     name: widget.name,
-                    statusIcon: createStatusIcon(),
-                    statusColor: createStatusColor(),
                   );
                 }
                 return Container();

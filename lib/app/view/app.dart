@@ -8,6 +8,7 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:mau_kerja_assessment/app/repository/candidate_blog_repository.dart';
 import 'package:mau_kerja_assessment/app/view/candidate_blog_main.dart';
@@ -30,11 +31,7 @@ class App extends StatelessWidget {
             accentColor: const Color(0xFF13B9FF),
           ),
         ),
-        // localizationsDelegates: const [
-        //   AppLocalizations.delegate,
-        //   GlobalMaterialLocalizations.delegate,
-        // ],
-        // supportedLocales: AppLocalizations.supportedLocales,
+        builder: EasyLoading.init(),
         home: AnimatedSplashScreen(
           nextScreen: CandidateBlogMain(),
           splash: Row(

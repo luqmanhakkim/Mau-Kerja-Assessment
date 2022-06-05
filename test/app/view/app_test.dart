@@ -6,8 +6,6 @@
 // https://opensource.org/licenses/MIT.
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mau_kerja_assessment/app/app.dart';
-import 'package:mau_kerja_assessment/counter/counter.dart';
 
 void main() {
   group('App', () {

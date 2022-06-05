@@ -25,16 +25,16 @@ class CandidateListBox extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-         Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => CandidateDetailScreen(
-                  name: name,
-                  images: photos,
-                  id: id,
-                ),
-              ),
-            );
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => CandidateDetailScreen(
+              name: name,
+              images: photos,
+              id: id,
+            ),
+          ),
+        );
       },
       child: Container(
         height: 100,
@@ -71,7 +71,9 @@ class CandidateListBox extends StatelessWidget {
                   Row(
                     children: [
                       genderIcon,
-                      SizedBox(width: 10,),
+                      SizedBox(
+                        width: 10,
+                      ),
                       Text(
                         gender.toUpperCase(),
                         style: TextStyle(
@@ -99,7 +101,9 @@ class CandidateListBox extends StatelessWidget {
                       ),
                     ],
                   ),
-                  SizedBox(height: 5,),
+                  SizedBox(
+                    height: 5,
+                  ),
                   Row(
                     children: [
                       Icon(
@@ -107,7 +111,9 @@ class CandidateListBox extends StatelessWidget {
                         size: 15,
                         color: Colors.grey,
                       ),
-                      SizedBox(width: 5,),
+                      SizedBox(
+                        width: 5,
+                      ),
                       Text(
                         'Expired: $expired',
                         style: TextStyle(

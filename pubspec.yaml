@@ -14,8 +14,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   intl: ^0.17.0
-  dio:
-  shared_preferences: 
+  dio: ^4.0.6
   flutter_dotenv: 
   freezed: ^1.1.0
   freezed_annotation: ^1.1.0

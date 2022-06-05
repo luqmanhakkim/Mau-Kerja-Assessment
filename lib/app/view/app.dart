@@ -9,11 +9,8 @@ import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:mau_kerja_assessment/app/repository/candidate_blog_repository.dart';
 import 'package:mau_kerja_assessment/app/view/candidate_blog_main.dart';
-import 'package:mau_kerja_assessment/counter/counter.dart';
-import 'package:mau_kerja_assessment/l10n/l10n.dart';
 
 import '../bloc/candidate_blog_bloc.dart';
 

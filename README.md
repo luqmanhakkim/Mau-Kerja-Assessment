@@ -12,13 +12,11 @@ Mau Kerja Assessment
 
 ## Questions for Mau Kerja Assessment
 
-1. What kind of architecture did you use?
-<br />
+1. What kind of architecture did you use?<br />
 I am using Bloc architechture in the project and MVC + S design pattern in the project where I split the project to several folder such as repository, model, and networking stuff.
 
 
-2. What libraries did you add to the app? What are they used for? if you not rely the other library tell us why?
-<br />
+2. What libraries did you add to the app? What are they used for? if you not rely the other library tell us why?<br />
 Here is libraries that I used in the project along with its function:
 - bloc: Design pattern to help separate business logic from presentation layer and can reuse back the code more efficiently
 - flutter_bloc: Flutter Widgets that make it easy to implement the BLoC (Business Logic Component) design pattern. Build to be used with bloc state management package
@@ -37,28 +35,22 @@ Here is libraries that I used in the project along with its function:
 - mocktail: A Dart mock library which simplifies mocking with null safety support and no manual mocks or code generator
 - very_good_analysis: This is a package where it provides lint rules for Dart and Flutter which are used and generated automatically with very_good_cli
 
-3. How long did you spend on the test?
-<br />
+3. How long did you spend on the test?<br />
 I used three days in completing the test
 
-4. If you had more time, what further improvements or new features would you add?
-<br />
+4. If you had more time, what further improvements or new features would you add?<br />
 I would like to implement a little bit of unit test in the projects. Besides that, if I had more time I would like to add related blog features which I can used up tag response from the API to show related blogs when user entering blog detail screen
 
-5. Which parts of your submission are you most proud of? And why? little advice, dont answer whole project, use one what you think it special.
-<br />
+5. Which parts of your submission are you most proud of? And why? little advice, dont answer whole project, use one what you think it special.<br />
 For me, I am most proud of where I split the projects into few folders and files. My code looks neat and structured and I think it is very easy to understand when people read it.
 
-6. Which parts did you spend the most time with? What did you find most difficult?
-<br />
+6. Which parts did you spend the most time with? What did you find most difficult?<br />
 I spend most of the time in making search feature. For me, search feature for this project required me to handle with two list that is blog and candidate
 
-7. How did you find the test overall? If you have any suggestions on how we can improve the test or our API, we'd love to hear them, please elaborate more about this.
-<br />
+7. How did you find the test overall? If you have any suggestions on how we can improve the test or our API, we'd love to hear them, please elaborate more about this.<br />
 Overally, I am really enjoy doing the assessment given. It was a good test for Flutter Developer. My opinion, everyone can code and make it happen but what I try to strive is a neat and very easy to understand code. Besides that, I am suggesting a way to improve more on candidate API. Currently, I faced a little bit of confusion where I need to show candidate details but I need to match candidate API with email API, Address API and status API by ID. I think it will be best if the API can return example as 'https://private-b9a758-candidattest.apiary-mock.com/{candidate_id}. This API can be trigger when user click to view candidate detail by only passing the ID to the API.
 
-8. The last question, quality or quantity?
-<br />
+8. The last question, quality or quantity?<br />
 I choose quality over quantity. For me, a good quality of code can lead to many good things such as improve developer experience, easy to understand when newcomer coming and give much more beneficial things. Quality is not something that can achieve easily. I am also still digging more and more to achieve clean and very understandable code. I define programming as a drawing. To draw a picture, we can draw it with any method that we can but our aim is only one to complete the drawing. 
 
 
